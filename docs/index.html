@@ -29,12 +29,24 @@
     }
 
     .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin: 10px 0; /* emoji ile kart arası yakınlaştırıldı */
-    }
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+
+  /* Gradient border */
+  border: 3px solid;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-image-source: linear-gradient(135deg, #9b4d96, #e67373);
+
+  /* Neumorphism gölgesi */
+  box-shadow: 
+    6px 6px 16px rgba(0,0,0,0.12),   /* dış gölge */
+    -6px -6px 16px rgba(255,255,255,0.7); /* ışık efekti */
+
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
 
     .btn {
   display: inline-block;
