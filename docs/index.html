@@ -8,51 +8,61 @@
     body {
       font-family: Arial, sans-serif;
       max-width: 700px;
-      margin: 20px auto; /* 40 yerine 20 yapıldı */
+      margin: 20px auto;
       padding: 0 20px;
       line-height: 1.6;
-      color: #111; /* yazılar siyah */
+      color: #111;
       background: linear-gradient(180deg, #9b4d96 0%, #d35d8d 50%, #e67373 100%);
       background-attachment: fixed;
     }
 
     h1 {
       text-align: center;
-      color: #fff; /* başlık beyaz */
-      margin-bottom: 6px; /* başlık-emoji arası daha az */
+      color: #fff;
+      margin-bottom: 6px;
     }
 
     .illustration {
       text-align: center;
-      font-size: 48px; /* emojiler küçültüldü */
-      margin: 4px 0 10px 0; /* üst ve alt boşluk azaltıldı */
+      font-size: 48px;
+      margin: 4px 0 10px 0;
     }
 
     .card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin: 10px 0;
-}
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin: 10px 0;
+      text-align: center; /* Butonları ortalamak için */
+    }
+
+    /* Paragraf metinlerini sola hizalı tutmak istersen bunu ekle, 
+       yoksa card içindeki text-align center her şeyi ortalar. 
+       Mevcut yapını bozmamak için p etiketine özel ayar: */
+    .card p {
+      text-align: left;
+    }
 
     .btn {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 12px 16px;
-  line-height: 1.3;        /* metin yüksekliğini daralttık */
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  transition: 0.2s ease;
-  min-width: 165px; /* hepsi en az bu genişlikte */
-}
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 12px 16px;
+      line-height: 1.3;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      transition: 0.2s ease;
+      min-width: 165px;
+      text-align: center; /* Buton içi yazı ortalansın */
+    }
+
     .btn:active {
-    transform: scale(0.97);  /* dokununca hafif küçülme */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
+      transform: scale(0.97);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
 
     .btn-email {
       background: #007aff;
@@ -76,9 +86,12 @@
   <div class="card">
     <p>Welcome to the official support page for <strong>Spy 3+ Player Party Game</strong>, the fun and social spy game for parties and friends!</p>
     <p>If you need help, found a bug, or just want to share feedback, feel free to reach out:</p>
+    
     <a href="mailto:emirhan8akyildirim@gmail.com" class="btn btn-email">📧&nbsp;&nbsp;Contact via Email</a>
     <a href="https://www.linkedin.com/in/emirhan-akyildirim/" target="_blank" class="btn btn-linkedin">🔗&nbsp;&nbsp;LinkedIn</a>
-    <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn btn-linkedin" style="background:#28a745;">📄&nbsp;&nbsp;Privacy Policy</a>
+    <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn" style="background:#28a745;">📄&nbsp;&nbsp;Privacy Policy</a>
+    
+    <a href="https://docs.google.com/document/d/1n4B6K7r4InWrpVVnZELZ6UZDAXAYTwiyBAovGf0pC-Q/edit?usp=sharing" target="_blank" class="btn" style="background:#343a40;">📜&nbsp;&nbsp;Terms of Use</a>
   </div>
 </body>
 </html>
