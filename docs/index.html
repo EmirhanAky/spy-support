@@ -19,46 +19,46 @@
       padding: 20px;
       color: #333;
       
-      /* --- YENİ ARKAPLAN: Eğlenceli ve Gizemli Gece --- */
-      /* Daha derin maviler ve canlı morlar - Gece görevi hissi */
-      background: linear-gradient(135deg, #1e0059 0%, #4a00e0 100%);
+      /* --- GÜNCELLENEN ARKAPLAN (SwipeClean Tarzı) --- */
+      /* Attığın görseldeki gibi soldan sağa Mor'dan Turuncu/Kırmızıya geçiş */
+      background: linear-gradient(135deg, #6a11cb 0%, #ff4b2b 100%);
       background-attachment: fixed;
     }
 
     .container {
       width: 100%;
-      max-width: 480px; /* Biraz daha daraltıp kompaktlaştırdım */
+      max-width: 480px; 
     }
 
     /* Ana Kart */
     .card {
       background: #ffffff;
       padding: 45px 35px;
-      border-radius: 30px; /* Daha yuvarlak, modern köşeler */
-      /* Gölgeye renk kattık, sanki arkadan ışık vuruyor gibi */
-      box-shadow: 0 30px 60px rgba(30, 0, 89, 0.5);
+      border-radius: 30px; 
+      /* Gölgeyi biraz yumuşattım ki renkli arka planda güzel dursun */
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
     h1 {
-      font-weight: 800; /* Daha kalın başlık */
+      font-weight: 800; 
       font-size: 32px;
-      color: #1e0059; /* Koyu indigo başlık rengi */
+      color: #1e0059; 
       margin-bottom: 20px;
       letter-spacing: -1px;
     }
 
     h1::before {
       content: '🕵️‍♂️'; 
-      font-size: 36px; /* Emoji biraz büyüdü */
-      display: block; /* Emojiyi başlığın üstüne aldım */
+      font-size: 36px; 
+      display: block; 
       margin-bottom: 10px;
     }
 
     .card p {
-      color: #5a5a7a; /* Biraz daha mavimsi gri metin */
+      color: #5a5a7a; 
       margin-bottom: 25px;
       line-height: 1.6;
       font-size: 16px;
@@ -72,20 +72,20 @@
       gap: 15px;
     }
 
-    /* --- GENEL BUTON YAPISI --- */
+    /* --- BUTONLAR --- */
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%; 
-      padding: 16px 20px; /* Biraz daha büyük butonlar */
-      border-radius: 16px; /* Daha yuvarlak */
+      padding: 16px 20px; 
+      border-radius: 16px; 
       font-size: 16px;
       font-weight: 700;
       text-decoration: none;
       color: white;
       border: none;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Daha yumuşak animasyon */
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
       position: relative;
       z-index: 1;
     }
@@ -96,11 +96,9 @@
     }
 
     .btn:active {
-      transform: scale(0.95) !important; /* Tıklama efekti */
+      transform: scale(0.95) !important;
     }
 
-    /* --- 1. AKSİYON BUTONLARI (Gradyanlı ve Enerjik) --- */
-    
     /* Email: Canlı Mor-Pembe Gradyan */
     .btn-email {
       background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
@@ -113,27 +111,24 @@
       box-shadow: 0 10px 20px rgba(0, 97, 255, 0.3);
     }
 
-    /* Aksiyon butonları hover efekti: Parlama ve yükselme */
     .btn-email:hover, .btn-linkedin:hover {
       transform: translateY(-5px);
-      filter: brightness(1.15); /* Rengi parlatır */
+      filter: brightness(1.15); 
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
 
-
-    /* --- 2. GİZLİ DOSYA BUTONLARI (Privacy & Terms) --- */
-    /* Gri yerine "Stealth Mod" (Koyu Lacivert) */
+    /* Gizli Dosya Butonları (Stealth Mod) */
     .btn-legal {
-      background: #1a1a2e; /* Çok koyu, desatüre lacivert */
-      color: #a0a0b0; /* Sönük, metalik yazı rengi */
+      background: #1a1a2e; 
+      color: #a0a0b0; 
       font-weight: 600;
-      border: 2px solid transparent; /* Hover için sınır hazırlığı */
+      border: 2px solid transparent; 
     }
 
     .btn-legal:hover {
-      background: #252540; /* Biraz açılır */
-      color: #ffffff; /* Yazı parlar */
-      border-color: #4a00e0; /* Mor bir çerçeve belirir */
+      background: #252540; 
+      color: #ffffff; 
+      border-color: #6a11cb; /* Çerçeveyi arka planla uyumlu mor yaptım */
       transform: translateY(-3px);
     }
 
@@ -157,10 +152,10 @@
         </a>
 
         <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn btn-legal">
-          <span>📂</span> Privacy Policy (Classified)
+          <span>📂</span> Privacy Policy
         </a>
         <a href="https://docs.google.com/document/d/1n4B6K7r4InWrpVVnZELZ6UZDAXAYTwiyBAovGf0pC-Q/edit?usp=sharing" target="_blank" class="btn btn-legal">
-          <span>📜</span> Terms of Use (Top Secret)
+          <span>📜</span> Terms of Use
         </a>
       </div>
 
