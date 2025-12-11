@@ -15,41 +15,41 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif; /* Modern font */
+      font-family: 'Inter', sans-serif;
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
       color: #333;
-      /* Premium koyu arka plan */
-      background: linear-gradient(135deg, #1a1c2c 0%, #2a3040 100%);
+      
+      /* Arkaplan: Mat Mor Gradient */
+      background: linear-gradient(135deg, #534363 0%, #2a2233 100%);
+      background-attachment: fixed;
     }
 
     .container {
       width: 100%;
-      max-width: 500px; /* Kart genişliği kompakt ve odaklı */
+      max-width: 500px;
     }
 
-    /* Ana Kart Tasarımı */
+    /* Ana Kart */
     .card {
       background: #ffffff;
       padding: 40px 30px; 
       border-radius: 24px; 
-      /* Daha sofistike, yaygın gölge */
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      box-shadow: 0 20px 40px rgba(42, 34, 51, 0.4);
       text-align: center;
     }
 
     h1 {
       font-weight: 700;
       font-size: 28px;
-      color: #111;
+      color: #2a2233;
       margin-bottom: 25px;
       letter-spacing: -0.5px;
     }
 
-    /* Başlığın yanındaki küçük premium ikon */
     h1::before {
       content: '🕵️‍♂️'; 
       font-size: 24px;
@@ -58,7 +58,7 @@
     }
 
     .card p {
-      color: #555; 
+      color: #665c70;
       margin-bottom: 20px;
       line-height: 1.7;
       font-size: 15px;
@@ -68,10 +68,10 @@
       margin-top: 35px;
       display: flex;
       flex-direction: column;
-      gap: 12px; /* Butonlar arası boşluk */
+      gap: 12px;
     }
 
-    /* Premium Buton Stili */
+    /* --- GENEL BUTON AYARLARI --- */
     .btn {
       display: flex;
       align-items: center;
@@ -83,38 +83,48 @@
       font-weight: 600;
       text-decoration: none;
       color: white;
-      /* Tek tip, koyu, şık arka plan rengi */
-      background: #2c3e50; 
       border: 1px solid transparent;
       transition: all 0.3s ease;
     }
 
-    /* Buton ikonları için ayar */
     .btn span {
       margin-right: 12px;
       font-size: 18px;
-    }
-
-    /* Hover Efekti */
-    .btn:hover {
-      background: #3b4d61;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
     .btn:active {
       transform: scale(0.98);
     }
 
-    /* Terms butonu için outline (çerçeveli) stil - hiyerarşi katar */
-    .btn-outline {
-        background: transparent;
-        border: 2px solid #2c3e50;
-        color: #2c3e50;
+    /* --- 1. EMAIL: Mat Mor (Tema Rengi) --- */
+    .btn-email {
+      background: #6d5885;
     }
-    .btn-outline:hover {
-        background: #2c3e50;
-        color: #fff;
+    .btn-email:hover {
+      background: #594670;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(109, 88, 133, 0.3);
+    }
+
+    /* --- 2. LINKEDIN: Mat Mavi --- */
+    .btn-linkedin {
+      background: #4a6fa5;
+    }
+    .btn-linkedin:hover {
+      background: #3b5a85;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
+    }
+
+    /* --- 3. LEGAL (Privacy & Terms): Mat Gri (Geri Planda) --- */
+    /* Bu renk dikkati üstüne çekmez ama şık durur */
+    .btn-legal {
+      background: #4a4e56; /* Koyu gri/antrasit */
+    }
+    .btn-legal:hover {
+      background: #36393f;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(74, 78, 86, 0.3);
     }
 
   </style>
@@ -126,21 +136,21 @@
       <h1>Spy App Support</h1>
       
       <p>Welcome to the official support hub for <strong>Spy 3+ Player Party Game</strong>. We're here to help you keep the fun going!</p>
-      <p style="font-size: 14px; color: #777;">Need assistance, found a bug, or have feedback? Select an option below:</p>
+      <p style="font-size: 14px; color: #887a94;">Need assistance, found a bug, or have feedback? Select an option below:</p>
       
       <div class="button-group">
-        <a href="mailto:emirhan8akyildirim@gmail.com" class="btn">
+        <a href="mailto:emirhan8akyildirim@gmail.com" class="btn btn-email">
           <span>📧</span> Contact via Email
         </a>
-        <a href="https://www.linkedin.com/in/emirhan-akyildirim/" target="_blank" class="btn">
+        <a href="https://www.linkedin.com/in/emirhan-akyildirim/" target="_blank" class="btn btn-linkedin">
           <span>🔗</span> LinkedIn Profile
         </a>
-        <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn">
+
+        <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn btn-legal">
           <span>📄</span> Privacy Policy
         </a>
-        
-        <a href="https://docs.google.com/document/d/1n4B6K7r4InWrpVVnZELZ6UZDAXAYTwiyBAovGf0pC-Q/edit?usp=sharing" target="_blank" class="btn btn-outline">
-            <span>📜</span> Terms of Use
+        <a href="https://docs.google.com/document/d/1n4B6K7r4InWrpVVnZELZ6UZDAXAYTwiyBAovGf0pC-Q/edit?usp=sharing" target="_blank" class="btn btn-legal">
+          <span>📜</span> Terms of Use
         </a>
       </div>
 
