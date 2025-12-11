@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spy App Support</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Sıfırlama ve Temel Ayarlar */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Sıfırlama */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -23,108 +19,122 @@
       padding: 20px;
       color: #333;
       
-      /* Arkaplan: Mat Mor Gradient */
-      background: linear-gradient(135deg, #534363 0%, #2a2233 100%);
+      /* --- YENİ ARKAPLAN: Eğlenceli ve Gizemli Gece --- */
+      /* Daha derin maviler ve canlı morlar - Gece görevi hissi */
+      background: linear-gradient(135deg, #1e0059 0%, #4a00e0 100%);
       background-attachment: fixed;
     }
 
     .container {
       width: 100%;
-      max-width: 500px;
+      max-width: 480px; /* Biraz daha daraltıp kompaktlaştırdım */
     }
 
     /* Ana Kart */
     .card {
       background: #ffffff;
-      padding: 40px 30px; 
-      border-radius: 24px; 
-      box-shadow: 0 20px 40px rgba(42, 34, 51, 0.4);
+      padding: 45px 35px;
+      border-radius: 30px; /* Daha yuvarlak, modern köşeler */
+      /* Gölgeye renk kattık, sanki arkadan ışık vuruyor gibi */
+      box-shadow: 0 30px 60px rgba(30, 0, 89, 0.5);
       text-align: center;
+      position: relative;
+      overflow: hidden;
     }
 
     h1 {
-      font-weight: 700;
-      font-size: 28px;
-      color: #2a2233;
-      margin-bottom: 25px;
-      letter-spacing: -0.5px;
+      font-weight: 800; /* Daha kalın başlık */
+      font-size: 32px;
+      color: #1e0059; /* Koyu indigo başlık rengi */
+      margin-bottom: 20px;
+      letter-spacing: -1px;
     }
 
     h1::before {
       content: '🕵️‍♂️'; 
-      font-size: 24px;
-      margin-right: 10px;
-      vertical-align: middle;
+      font-size: 36px; /* Emoji biraz büyüdü */
+      display: block; /* Emojiyi başlığın üstüne aldım */
+      margin-bottom: 10px;
     }
 
     .card p {
-      color: #665c70;
-      margin-bottom: 20px;
-      line-height: 1.7;
-      font-size: 15px;
+      color: #5a5a7a; /* Biraz daha mavimsi gri metin */
+      margin-bottom: 25px;
+      line-height: 1.6;
+      font-size: 16px;
+      font-weight: 500;
     }
 
     .button-group {
-      margin-top: 35px;
+      margin-top: 40px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 15px;
     }
 
-    /* --- GENEL BUTON AYARLARI --- */
+    /* --- GENEL BUTON YAPISI --- */
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%; 
-      padding: 14px 20px;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
+      padding: 16px 20px; /* Biraz daha büyük butonlar */
+      border-radius: 16px; /* Daha yuvarlak */
+      font-size: 16px;
+      font-weight: 700;
       text-decoration: none;
       color: white;
-      border: 1px solid transparent;
-      transition: all 0.3s ease;
+      border: none;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Daha yumuşak animasyon */
+      position: relative;
+      z-index: 1;
     }
 
     .btn span {
       margin-right: 12px;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .btn:active {
-      transform: scale(0.98);
+      transform: scale(0.95) !important; /* Tıklama efekti */
     }
 
-    /* --- 1. EMAIL: Mat Mor (Tema Rengi) --- */
+    /* --- 1. AKSİYON BUTONLARI (Gradyanlı ve Enerjik) --- */
+    
+    /* Email: Canlı Mor-Pembe Gradyan */
     .btn-email {
-      background: #6d5885;
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      box-shadow: 0 10px 20px rgba(37, 117, 252, 0.3);
     }
-    .btn-email:hover {
-      background: #594670;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(109, 88, 133, 0.3);
-    }
-
-    /* --- 2. LINKEDIN: Mat Mavi --- */
+    
+    /* LinkedIn: Elektrik Mavisi Gradyan */
     .btn-linkedin {
-      background: #4a6fa5;
-    }
-    .btn-linkedin:hover {
-      background: #3b5a85;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(74, 111, 165, 0.3);
+      background: linear-gradient(90deg, #0061ff 0%, #60efff 100%);
+      box-shadow: 0 10px 20px rgba(0, 97, 255, 0.3);
     }
 
-    /* --- 3. LEGAL (Privacy & Terms): Mat Gri (Geri Planda) --- */
-    /* Bu renk dikkati üstüne çekmez ama şık durur */
-    .btn-legal {
-      background: #4a4e56; /* Koyu gri/antrasit */
+    /* Aksiyon butonları hover efekti: Parlama ve yükselme */
+    .btn-email:hover, .btn-linkedin:hover {
+      transform: translateY(-5px);
+      filter: brightness(1.15); /* Rengi parlatır */
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     }
+
+
+    /* --- 2. GİZLİ DOSYA BUTONLARI (Privacy & Terms) --- */
+    /* Gri yerine "Stealth Mod" (Koyu Lacivert) */
+    .btn-legal {
+      background: #1a1a2e; /* Çok koyu, desatüre lacivert */
+      color: #a0a0b0; /* Sönük, metalik yazı rengi */
+      font-weight: 600;
+      border: 2px solid transparent; /* Hover için sınır hazırlığı */
+    }
+
     .btn-legal:hover {
-      background: #36393f;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(74, 78, 86, 0.3);
+      background: #252540; /* Biraz açılır */
+      color: #ffffff; /* Yazı parlar */
+      border-color: #4a00e0; /* Mor bir çerçeve belirir */
+      transform: translateY(-3px);
     }
 
   </style>
@@ -135,22 +145,22 @@
     <div class="card">
       <h1>Spy App Support</h1>
       
-      <p>Welcome to the official support hub for <strong>Spy 3+ Player Party Game</strong>. We're here to help you keep the fun going!</p>
-      <p style="font-size: 14px; color: #887a94;">Need assistance, found a bug, or have feedback? Select an option below:</p>
+      <p>Welcome, Agent! This is the secure channel for the <strong>Spy 3+ Player Party Game</strong>.</p>
+      <p style="font-size: 15px; color: #7a7a9a;">Report a bug, request backup, or check classified documents below:</p>
       
       <div class="button-group">
         <a href="mailto:emirhan8akyildirim@gmail.com" class="btn btn-email">
-          <span>📧</span> Contact via Email
+          <span>📧</span> Contact HQ via Email
         </a>
         <a href="https://www.linkedin.com/in/emirhan-akyildirim/" target="_blank" class="btn btn-linkedin">
-          <span>🔗</span> LinkedIn Profile
+          <span>🔗</span> Connect on LinkedIn
         </a>
 
         <a href="https://docs.google.com/document/d/1WO3u1dAJcC9EVi52CGXhTFwYrcQJfMeBcPMgEuc0b-8/edit?usp=sharing" target="_blank" class="btn btn-legal">
-          <span>📄</span> Privacy Policy
+          <span>📂</span> Privacy Policy (Classified)
         </a>
         <a href="https://docs.google.com/document/d/1n4B6K7r4InWrpVVnZELZ6UZDAXAYTwiyBAovGf0pC-Q/edit?usp=sharing" target="_blank" class="btn btn-legal">
-          <span>📜</span> Terms of Use
+          <span>📜</span> Terms of Use (Top Secret)
         </a>
       </div>
 
